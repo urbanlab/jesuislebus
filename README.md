@@ -28,7 +28,8 @@ https://api.chatfuel.com/invite/vYUFnv6TMJtXru9726eMQLSuzT5iqYA7
 
 Export des textes et liens vers les contenus :
 ---------------
-- **Original** (sorti du challenge Transport 01/2018) : https://docs.google.com/spreadsheets/d/1fzILXWM4wBaYIAquyKeGSOFwWkrA0U1hfn_WYv9EIdY/edit#gid=1421725221
+- **Original** (sorti du challenge Transport 01/2018) : 
+https://docs.google.com/spreadsheets/d/1fzILXWM4wBaYIAquyKeGSOFwWkrA0U1hfn_WYv9EIdY/edit?usp=sharing
 
 - **Traduction** du bot dans le cadre de la Web Conference 2018 à Lyon :
-https://docs.google.com/spreadsheets/d/1R9tUOoSFze8IWehHjcEpYAE7Kaf1X6S1kgDkwwnx2b4/edit#gid=249402655
+https://docs.google.com/spreadsheets/d/1R9tUOoSFze8IWehHjcEpYAE7Kaf1X6S1kgDkwwnx2b4/edit?usp=sharing
