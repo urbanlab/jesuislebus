@@ -1,47 +1,34 @@
 # Je suis le bus
 
----
-Principe
----
-Le déploiement des compteurs intelligents, en particulier l'implémentation du compteur Linky, rencontre une forte opposition en ce moment. Cela s'explique majoritairement par deux raisons:
+Description et lien vers projet
+==========
+Prototype de robot conversationnel (chatbot) représentant un bus à un horaire particulier (Bus 27 de 8:52), pour collecter la mémoire des voyageurs et faciliter les échanges asynchrones entre eux.
+http://erasme.org/je-suis-le-bus
 
-- Les citoyens paient indirectement pour le déploiement de ces dispositifs, mais ont l'impression que ces derniers bénéficient uniquement aux gestionnaires des réseaux d'électricité, d'eau et de gaz.
-- De nombreuses personnes craignent que leurs consommations d'eau, d'électricité et de gaz soient utilisées pour reconstruire leur comportement au quotidien et ainsi les espionner.
+Matériel et scénographie
+---------
+- environnement de bus de ville
+- 1 QR code pointant vers le lien Messenger pour commencer la conversation
+- 1 sticker d'appel à l'action (lié au QRcode)
+- 1 smartphone ou tablette (de l'utilisateur ou du médiateur)
 
-L'objectif d'Optigy est d'apporter une réponse à ces deux sources d'opposition en montrant comment un dispositif basé sur un compteur connecté peut aider les citoyens à modérer leur consommation d'énergie tout en conservant leurs données personnelles chez eux.
+Besoins techniques à l'installation :
+--------
+- 1 arrivée électrique pour la recharge de l'appareil (smartphone ou tablette) du médiateur
 
----
-Fonctionnement
----
-En raison des limites du Workshop, Optigy se focalise la problématique de l'électricité et donc sur le compteur Linky. Il s'agit d'une maquette simulant la situation suivante:
+Liens vers le back-office (CHATFUEL)
+-----
+- **Version FR** (Chatbot connecté à la page Bus 27)
+https://www.facebook.com/Bus-27-1424580084319656/
+https://api.chatfuel.com/invite/OHDRSajriGUwyq4PGbFDrLr7gFdFjTn9
 
-- Au sein d'une maison, le compteur Linky est muni d'un module supplémentaire permettant d'en extraire, seconde par seconde, la consommation d'énergie totale. Ces données restent en local (Linky transmet à Enedis, sous réserve d'acceptation des usagers, les données de consommation demi-heure par demi-heure, ce qui est insuffisant pour notre analyse).
-- Une intelligence artificielle retrouve la consommation de chaque appareil de la maison à partir de sa consommation totale: on dit qu'elle **désagrège** la consommation d'électricité totale de la maison.
-- Les usagers disposent d'une application mobile qui affiche la consommation énergétique de chaque appareil, donne des conseils permettant d'économiser de l'énergie (éco-gestes, changements d'appareils, travaux à réaliser) et chiffre en euros les économies prédites.
-- Enfin, un objet connecté permet aux usagers de se rendre compte à chaque instant de leur niveau de consommation électrique: il s'agit d'une "lampe à diodes" clignotant de manière d'autant plus chaotique que la consommation d'énergie instantanée est élevée.
+- **Version EN** (Chatbot connecté à la page Bus27)
+https://www.facebook.com/Bus27-485177198545529/
+https://api.chatfuel.com/invite/vYUFnv6TMJtXru9726eMQLSuzT5iqYA7
 
-L'interaction des visiteurs avec la maquette est guidée par un démonstrateur et se fait en trois temps:
+Export des textes et liens vers les contenus :
+---------------
+- **Original** (sorti du challenge Transport 01/2018) : https://docs.google.com/spreadsheets/d/1fzILXWM4wBaYIAquyKeGSOFwWkrA0U1hfn_WYv9EIdY/edit#gid=1421725221
 
-1. Les usagers simulent la consommation d'énergie d'une maison sur une journée en "activant" des appareils électroniques de leur choix sur une maquette en carton (voir "Architecture").
-2. Cette consommation d'énergie est ensuite désagrégée par une IA pré-entraînée. Les résultats de cette désagrégation s'affichent sur l'application mobile.
-3. Les usagers consultent alors l'application pour visualiser leur journée et les conseils associés.
-
----
-Architecture
----
-Le dispositif Optigy se compose de 5 éléments:
-
-1. Une maquette en carton représentant l'intérieur d'une maison, sur laquelle des répliques en plastique d'appareils électriques sont disposées. Ces dernières fonctionnent comme des boutons: quand on appuie dessus, un signal électrique est généré et transmis au contrôleur de la maquette.
-2. Un Arduino permettant de contrôler la maquette et de récupérer les moments auxquels chaque appareil électrique s'active.
-3. Un ordinateur qui traite les données et fait office de serveur pour l'application mobile.
-4. Une application mobile comportant 2 pages: une page affichant la consommation énergétique désagrégée de la journée et une page donnant et chiffrant des conseils d'économies d'énergie. (cette dernière page est pour l'instant simulée).
-5. Une "lampe à diodes" construite en carton et à l'aide de LED, qui n'est pas connectée au reste de la démo (fonctionnement aléatoire).
-
-En termes de programmation:
-
-- Les Arduino fonctionnent avec Processing.
-- L'acquisition et les calculs sont effectués grâce à un programme Python. On implémente une SVM via le module scikitlearn pour la désagrégation.
-- L'application mobile fonctionne grâce au framework Ionic3 et un serveur NodeJS.
-- La lampe est contrôlée par un Arduino.
-
-A noter que la maquette a été conçue sous l'OS Ubuntu 16.04 (Linux).
+- **Traduction** du bot dans le cadre de la Web Conference 2018 à Lyon :
+https://docs.google.com/spreadsheets/d/1R9tUOoSFze8IWehHjcEpYAE7Kaf1X6S1kgDkwwnx2b4/edit#gid=249402655
